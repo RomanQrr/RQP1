@@ -1,0 +1,8 @@
+class Man
+{
+public:
+	Man();
+	int WhatAge();
+	int Age;
+	static int MaxAge;
+};

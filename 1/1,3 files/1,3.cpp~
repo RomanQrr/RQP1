@@ -1,0 +1,11 @@
+#include<string>
+#include<iostream>
+#include"World.h"
+#include"World.cpp"
+#include"SayHi.cpp"
+int main()
+{
+	World myWorld;
+	std::cout<<myWorld.SayHi();
+	return 0;
+}
