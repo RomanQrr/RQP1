@@ -1,3 +1,8 @@
+#ifndef ChainClass_h
+#define ChainClass_h
+#include"vector"
+#include"class1.h"
+#include"class2.h"
 class Chain
 {
 public:
@@ -9,3 +14,4 @@ private:
 	int inx;
 	int iny;
 };
+#endif

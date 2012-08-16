@@ -20,5 +20,5 @@ void Screen::Make()
 };
 void Screen::Apear()
 {
-	outLook[x][y]=symbol;
+	outLook[m_f_y][m_f_x]=m_f_s;
 };

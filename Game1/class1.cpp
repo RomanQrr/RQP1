@@ -20,5 +20,6 @@ void Screen::Make()
 };
 void Screen::Apear()
 {
-	outLook[pMainObj->Getx][pMainObj->Gety]=symbol;
+	outLook[m_f_y][m_f_x]=m_f_s;
+	this->Make();
 };

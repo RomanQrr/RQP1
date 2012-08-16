@@ -6,14 +6,14 @@ Object::Object()
 void Object::Destroy()
 {
 	symbol='*';
-	pfild->Apear();
+	fild.Apear();
 };
 Player::Player()
 {
 	x=3;
 	y=5;
 	symbol='^';
-	pfild->Apear();
+	fild.Apear();
 };
 void Player::PShot()
 {

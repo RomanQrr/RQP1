@@ -1,3 +1,5 @@
+#ifndef class2_h
+#define class2_h
 //Класс объектов
 class Object
 {
@@ -7,6 +9,7 @@ public:
 	int x; //Координата Х
 	int y; //Координата Y
 	char symbol;
+	int hp;
 };
 //Класс игрока
 class Player: public Object
@@ -15,11 +18,12 @@ public:
 	Player(); //Конструктор
 	void PShot(); //Стрельба игрока
 	void PMove(); //Движение
-	int hp; //Жизнь игрока
 };
 //Класс врагов
 class Enemy: public Object
 {
+public:
 	Enemy();
 	void EMoveDown(); //Движение
 };
+#endif
