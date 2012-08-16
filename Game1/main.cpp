@@ -1,7 +1,7 @@
 #include"class1.h"
+#include"class2.h"
 int main()
 {
-	Screen fild;
-	fild.Make();
+	Chain world;
 	return 0;
 }

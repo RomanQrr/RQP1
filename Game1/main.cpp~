@@ -1,7 +1,11 @@
 #include"class1.h"
+#include"class2.h"
+Screen * pfild;
 int main()
 {
 	Screen fild;
-	fild.Make;
+	pfild = & fild;
+	Object * pMainObj;
+	fild.Make();
 	return 0;
 }

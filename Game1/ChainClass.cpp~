@@ -1,0 +1,7 @@
+#include"ChainClass.h"
+#include<vector>
+Chain::Chain()
+{
+	Screen fild;
+	std::vector<Object *> vObject;
+};

@@ -4,6 +4,7 @@ class Screen
 public:
 	Screen();
 	void Make();
+	void Apear();
 private:
-	std::vector<std::vector<char>> outLook;
+	std::vector<std::vector<char> > outLook;
 };

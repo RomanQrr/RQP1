@@ -1,0 +1,29 @@
+#include"class2.h"
+Object::Object()
+{
+	
+};
+void Object::Destroy()
+{
+	symbol='*';
+	pfild->Apear();
+};
+Player::Player()
+{
+	x=3;
+	y=5;
+	symbol='^';
+	pfild->Apear();
+};
+void Player::PShot()
+{
+	
+};
+Enemy::Enemy()
+{
+	
+};
+void Enemy::EMoveDown()
+{
+	y++;
+}
