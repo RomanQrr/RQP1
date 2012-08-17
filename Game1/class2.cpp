@@ -9,8 +9,8 @@ void Object::Destroy()
 };
 Player::Player()
 {
-	x=3;
-	y=5;
+	x=4;
+	y=2;
 	symbol='^';
 	hp=3;
 };
@@ -20,8 +20,8 @@ void Player::PShot()
 };
 Enemy::Enemy()
 {
-	x=3;
-	y=1;
+	x=0;
+	y=2;
 	symbol='T';
 	hp=1;
 };
