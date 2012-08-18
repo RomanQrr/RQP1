@@ -9,6 +9,7 @@ public:
 	Chain();
 	void CreateE();
 	void MoveAllE();
+	void Shoot();
 private:
 	Screen fild;
 	std::vector< Enemy * > vEnemy;

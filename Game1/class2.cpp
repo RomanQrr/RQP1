@@ -1,7 +1,12 @@
 #include"class2.h"
+#include<iostream>
 Object::Object()
 {
 	
+};
+Object::~Object()
+{
+	std::cout<<"Объект уничтожен."<<std::endl;
 };
 void Object::Destroy()
 {

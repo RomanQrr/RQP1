@@ -5,6 +5,7 @@ class Object
 {
 public:
 	Object(); //Конструктор
+	~Object();
 	void Destroy(); //Уничтожение
 	int x; //Координата Х
 	int y; //Координата Y

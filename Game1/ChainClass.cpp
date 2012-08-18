@@ -19,9 +19,14 @@ void Chain::MoveAllE()
 		for(int u=0; u<vEnemy[i]->spd; u++)
 		{
 			vEnemy[i]->EMoveDown();
-			if(
+			if(vEnemy[i]->y>5 or vEnemy[i]->y<0 or vEnemy[i]->x>5 or vEnemy[i]->x<0)
+			{
+				vEnemy[i]->delete();
+				live=0;
+			}
 		}
-		fild.XYChange(vEnemy[i]->y, vEnemy[i]->x, vEnemy[i]->symbol);
+		if(live=1)
+			fild.XYChange(vEnemy[i]->y, vEnemy[i]->x, vEnemy[i]->symbol);
 	}
 	fild.Make();
 };

@@ -36,5 +36,5 @@ Bullet::Bullet()
 	y=0;
 	symbol='o';
 	hp=1;
-	spd=3;
+	spd=2;
 };

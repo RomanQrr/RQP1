@@ -16,5 +16,6 @@ private:
 	//int inx;
 	//int iny;
 	int countE;
+	int live;
 };
 #endif
