@@ -24,8 +24,17 @@ Enemy::Enemy()
 	y=2;
 	symbol='T';
 	hp=1;
+	spd=1;
 };
 void Enemy::EMoveDown()
 {
-	y++;
+	x++;
+};
+Bullet::Bullet()
+{
+	x=0;
+	y=0;
+	symbol='o';
+	hp=1;
+	spd=2;
 };

@@ -25,5 +25,11 @@ class Enemy: public Object
 public:
 	Enemy();
 	void EMoveDown(); //Движение
+	int spd;
+};
+class Bullet: public Enemy
+{
+public:
+	Bullet();
 };
 #endif

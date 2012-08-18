@@ -8,10 +8,13 @@ class Chain
 public:
 	Chain();
 	void CreateE();
+	void MoveAllE();
+	void Shoot();
 private:
 	Screen fild;
-	std::vector<Object *> vObject;
-	int inx;
-	int iny;
+	std::vector< Enemy * > vEnemy;
+	//int inx;
+	//int iny;
+	int countE;
 };
 #endif

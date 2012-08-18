@@ -17,8 +17,22 @@ void Screen::Make()
 			std::cout<<outLook[u][i];
 		std::cout<<std::endl;
 	}
+	std::cout<<std::endl;
 };
-void Screen::Apear()
+void Screen::Apear( int iY, int iX, char iS )
 {
-	outLook[m_f_y][m_f_x]=m_f_s;
+	outLook[iY][iX]=iS;
+	this->Make();
+};
+void Screen::XYChange( int iY, int iX, char iS )
+{
+	outLook[iY][iX]=iS;
+};
+void Screen::Clear()
+{
+	std::vector<char> vector1;
+	for( int i = 0; i <5; ++i )
+		vector1.push_back( '.' );
+	for(int i=0; i<5; i++)
+		outLook.push_back(vector1);
 };

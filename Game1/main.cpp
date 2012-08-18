@@ -5,5 +5,8 @@ int main()
 {
 	Chain world;
 	world.CreateE();
+	world.MoveAllE();
+	world.Shoot();
+	world.MoveAllE();
 	return 0;
 }
