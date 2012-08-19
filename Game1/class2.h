@@ -1,5 +1,6 @@
 #ifndef class2_h
 #define class2_h
+#include"Gunz.h"
 //Класс объектов
 class Object
 {
@@ -27,10 +28,15 @@ public:
 	Enemy();
 	void EMoveDown(); //Движение
 	int spd;
+	Bullet * Shoot();
+private:
+	Gun1 * mygun = Gun1();
 };
-class Bullet: public Enemy
+class Bullet: public Object();
 {
 public:
 	Bullet();
+	void MoveDown();
+	int spd
 };
 #endif

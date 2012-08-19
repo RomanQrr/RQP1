@@ -1,8 +1,11 @@
 #include"ChainClass.h"
 #include<vector>
+#include<iostream>
 Chain::Chain()
 {
 	countE=0;
+	live=1;
+	fild.Apear(player.y, player.x, player.symbol);
 };
 void Chain::CreateE()
 {
@@ -19,13 +22,27 @@ void Chain::MoveAllE()
 		for(int u=0; u<vEnemy[i]->spd; u++)
 		{
 			vEnemy[i]->EMoveDown();
-			if(vEnemy[i]->y>5 or vEnemy[i]->y<0 or vEnemy[i]->x>5 or vEnemy[i]->x<0)
+			inx=vEnemy[i]->x;
+			iny=vEnemy[i]->y;
+			if(vEnemy[i]->y>4 or vEnemy[i]->y<0 or vEnemy[i]->x>4 or vEnemy[i]->x<0)
 			{
-				vEnemy[i].delete();
+				u=vEnemy[i]->spd;
+				vEnemy[i]->~Object();
 				live=0;
+				countE--;
+				i--;
+			}
+			if(vEnemy[i]->y==player.y && vEnemy[i]->x==player.x)
+			{
+				player.hp=player.hp-vEnemy[i]->hp;
+				u=vEnemy[i]->spd;
+				vEnemy[i]->~Object();
+				live=0;
+				countE--;
+				i--;
 			}
 		}
-		if(live=1)
+		if(live==1)
 			fild.XYChange(vEnemy[i]->y, vEnemy[i]->x, vEnemy[i]->symbol);
 	}
 	fild.Make();
@@ -34,7 +51,7 @@ void Chain::Shoot()
 {
 	for(int i=0; i<countE; i++)
 	{
-		if(vEnemy[i]->symbol=='T' && fild.outLook[vEnemy[i]->y][vEnemy[i]->x+1]=='.')
+		if(vEnemy[i]->symbol=='v' && fild.outLook[vEnemy[i]->y][vEnemy[i]->x+1]=='.')
 		{
 			Enemy * enemy = new Bullet();
 			vEnemy.push_back( enemy );

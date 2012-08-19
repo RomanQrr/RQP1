@@ -11,11 +11,14 @@ public:
 	void MoveAllE();
 	void Shoot();
 private:
+	Player player;
 	Screen fild;
 	std::vector< Enemy * > vEnemy;
+	std::vector< Bullet * > vBullet;
 	//int inx;
 	//int iny;
 	int countE;
 	int live;
+	int countB;
 };
 #endif

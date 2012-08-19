@@ -1,4 +1,5 @@
 #include"class2.h"
+#include"Gunz.h"
 #include<iostream>
 Object::Object()
 {
@@ -35,11 +36,15 @@ void Enemy::EMoveDown()
 {
 	x++;
 };
+Bullet * Enemy::Shoot()
+{
+	return mygun->Shoot();
+};
 Bullet::Bullet()
 {
 	x=0;
 	y=0;
 	symbol='o';
 	hp=1;
-	spd=2;
+	spd=3;
 };
