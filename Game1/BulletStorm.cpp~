@@ -1,10 +1,10 @@
 #include"BulletStorm.h"
-Bullet::Bullet()
+Shot::Shot()
 {
 	x=0;
 	y=0;
 	symbol='o';
 	spd=3;
 };
-Bullet::~Bullet(){};
-void Bullet::MoveDown(){};
+Shot::~Shot(){};
+void Shot::MoveDown(){};

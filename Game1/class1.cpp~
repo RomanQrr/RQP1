@@ -4,16 +4,17 @@
 Screen::Screen()
 {
 	std::vector<char> vector1;
-	for( int i = 0; i <5; ++i )
+	for( int i = 0; i < height; ++i )
 		vector1.push_back( '.' );
-	for(int i=0; i<5; i++)
+	for(int i = 0; i < width; i++)
 		outLook.push_back(vector1);
 };
 void Screen::Make()
 {
-	for(int i=0; i<5; i++)
+	std::cout<<"\O33[2J\O33[1;1H"<<std::endl;
+	for(int i=0; i<height; i++)
 	{
-		for(int u=0; u<5; u++)
+		for(int u=0; u<width; u++)
 			std::cout<<outLook[u][i];
 		std::cout<<std::endl;
 	}
@@ -30,9 +31,7 @@ void Screen::XYChange( int iY, int iX, char iS )
 };
 void Screen::Clear()
 {
-	std::vector<char> vector1;
-	for( int i = 0; i <5; ++i )
-		vector1.push_back( '.' );
-	for(int i=0; i<5; i++)
-		outLook.push_back(vector1);
+	for( int i = 0; i <height; ++i )
+		for( int u = 0; u<width; u++)
+			outLook[u][i]='.';
 };

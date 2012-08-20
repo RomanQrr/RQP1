@@ -1,6 +1,7 @@
 #ifndef class1_h
 #define class1_h
 #include<vector>
+#include"const.h"
 class Screen
 {
 public:

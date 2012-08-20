@@ -9,6 +9,8 @@ class Chain
 {
 public:
 	Chain();
+	void Stop() {running = false;}
+	bool IsRunning { return running; }
 	void CreateE();
 	void MoveAllE();
 	void Shoot();
@@ -17,10 +19,7 @@ private:
 	Screen fild;
 	std::vector< Enemy * > vEnemy;
 	std::vector< Shot * > vBullet;
-	//int inx;
-	//int iny;
-	int countE;
-	int live;
-	int countB;
+
+	bool running;
 };
 #endif

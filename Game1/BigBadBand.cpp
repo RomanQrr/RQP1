@@ -1,16 +1,13 @@
 #include"BigBadBand.h"
+#include<cstdlib>
 Enemy::Enemy()
 {
-	x=0;
-	y=2;
+	x=rand() % 3;
+	y=rand() % width;
 	symbol='T';
 	hp=1;
-	spd=1;
+	deley=3;
 	mygun= new Gun1();
-};
-void Enemy::EMoveDown()
-{
-	x++;
 };
 Shot * Enemy::Shoot()
 {

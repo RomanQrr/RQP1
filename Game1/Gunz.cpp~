@@ -5,7 +5,7 @@ Gun1::Gun1()
 };
 Shot * Gun1::Shoot()
 {
-	Bullet * bullet = new Bullet();
+	Shot * bullet = new Shot();
 	bullet->symbol=symbol;
 	return bullet;
 };
