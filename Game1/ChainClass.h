@@ -3,6 +3,8 @@
 #include"vector"
 #include"class1.h"
 #include"class2.h"
+#include"BulletStorm.h"
+#include"BigBadBand.h"
 class Chain
 {
 public:
@@ -14,11 +16,11 @@ private:
 	Player player;
 	Screen fild;
 	std::vector< Enemy * > vEnemy;
-	std::vector< Bullet * > vBullet;
+	std::vector< Shot * > vBullet;
 	//int inx;
 	//int iny;
 	int countE;
-	int live;
+	bool live;
 	int countB;
 };
 #endif

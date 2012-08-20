@@ -1,12 +1,11 @@
 #include"Gunz.h"
-#include"class2.h"
 Gun1::Gun1()
 {
-	symbol='o'
+	symbol='o';
 };
-Bullet * Gun1::Shoot();
+Shot * Gun1::Shoot()
 {
-	Bullet * bullet = new Bullet();
+	Shot * bullet = new Shot();
 	bullet->symbol=symbol;
 	return bullet;
 };

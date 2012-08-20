@@ -1,5 +1,11 @@
 #include"Gunz.h"
 Gun1::Gun1()
 {
-	symbol='o'
+	symbol='o';
+};
+Shot * Gun1::Shoot()
+{
+	Bullet * bullet = new Bullet();
+	bullet->symbol=symbol;
+	return bullet;
 };

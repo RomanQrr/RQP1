@@ -1,5 +1,3 @@
-#include"class1.h"
-#include"class2.h"
 #include"ChainClass.h"
 int main()
 {
@@ -11,5 +9,9 @@ int main()
 	world.CreateE();
 	world.MoveAllE();
 	world.Shoot();
+	world.MoveAllE();
+	world.CreateE();
+	world.Shoot();
+	world.MoveAllE();
 	return 0;
 }

@@ -1,0 +1,13 @@
+#ifndef Storm_h
+#define Storm_h
+
+#include "class2.h"
+
+class Bullet: public Object
+{
+public:
+	Bullet();
+	~Bullet();
+	void MoveDown();
+};
+#endif

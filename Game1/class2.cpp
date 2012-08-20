@@ -1,9 +1,8 @@
 #include"class2.h"
-#include"Gunz.h"
 #include<iostream>
 Object::Object()
 {
-	
+	alive=1;
 };
 Object::~Object()
 {
@@ -12,6 +11,7 @@ Object::~Object()
 void Object::Destroy()
 {
 	symbol='*';
+	alive=0;
 };
 Player::Player()
 {
@@ -20,31 +20,11 @@ Player::Player()
 	symbol='^';
 	hp=3;
 };
-void Player::PShot()
+Player::~Player()
+{
+	std::cout<<"Игрок подбит! ";
+};
+void Player::PShoot()
 {
 	
-};
-Enemy::Enemy()
-{
-	x=0;
-	y=2;
-	symbol='T';
-	hp=1;
-	spd=1;
-};
-void Enemy::EMoveDown()
-{
-	x++;
-};
-Bullet * Enemy::Shoot()
-{
-	return mygun->Shoot();
-};
-Bullet::Bullet()
-{
-	x=0;
-	y=0;
-	symbol='o';
-	hp=1;
-	spd=3;
 };

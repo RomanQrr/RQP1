@@ -12,5 +12,8 @@ int main()
 	world.MoveAllE();
 	world.Shoot();
 	world.MoveAllE();
+	world.CreateE();
+	world.Shoot();
+	world.MoveAllE();
 	return 0;
 }

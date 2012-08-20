@@ -3,7 +3,7 @@
 #include<iostream>
 Chain::Chain()
 {
-	countB=0
+	countB=0;
 	countE=0;
 	live=1;
 	fild.Apear(player.y, player.x, player.symbol);
@@ -12,7 +12,7 @@ void Chain::CreateE()
 {
 	Enemy * enemy = new Enemy();
 	vEnemy.push_back( enemy );
-	fild.XYChange(vEnemy.back()->y, vEnemy.back()->x, vEnemy.back()->symbol);
+	fild.Apear(vEnemy.back()->y, vEnemy.back()->x, vEnemy.back()->symbol);
 	countE=countE+1;
 };
 void Chain::MoveAllE()
@@ -20,19 +20,49 @@ void Chain::MoveAllE()
 	fild.Clear();
 	for(int i=0; i<countE; i++)
 	{
-		vEnemy[i]->EMoveDown();
-		if(vEnemy[i]->y>4 or vEnemy[i]->y<0 or vEnemy[i]->x>4 or vEnemy[i]->x<0)
+		if(vEnemy[i]->alive==1)
 		{
-			u=vEnemy[i]->spd;
-			vEnemy[i]->~Object();
-			live=0;
-			countE--;
-			i--;
+			std::cout<<"Начало движения"<<std::endl;
+			vEnemy[i]->EMoveDown();
+			if(vEnemy[i]->y>4 or vEnemy[i]->y<0 or vEnemy[i]->x>4 or vEnemy[i]->x<0)
+			{
+				//vEnemy[i]->~Object();
+				live=0;
+				vEnemy[i]->alive=0;
+			}
+			for(int u=0; u<countB; u++)
+			{
+				if(live==1)
+				{
+					if(vEnemy[i]->y==vBullet[u]->y && vEnemy[i]->x==vBullet[u]->x)
+					{
+						vEnemy[i]->Destroy();
+						fild.XYChange(vEnemy[i]->y, vEnemy[i]->x, vEnemy[i]->symbol);
+						//vEnemy[i]->~Object();
+						//vBullet[u]->~Bullet();
+						live=0;
+						vEnemy[i]->alive=0
+						vEnemy[u]->alive=0
+						u=countB;
+					}
+				}
+			}
+			if(live==1)
+			{
+				if(vEnemy[i]->y==player.y && vEnemy[i]->x==player.x)
+				{
+					player.hp--;
+					vEnemy[i]->alive=0;
+					live=0;
+				}
+			}
+			if(live==1)
+				fild.XYChange(vEnemy[i]->y, vEnemy[i]->x, vEnemy[i]->symbol);
+			}
 		}
-		if(live==1)
-			fild.XYChange(vEnemy[i]->y, vEnemy[i]->x, vEnemy[i]->symbol);
-	}
-	for(int i=0; i<countB; i++)
+		for(int i=0; i<countB; i++)
+			if(vBullet[i]->alive==1)
+				fild.XYChange(vBullet[i]->y, vBullet[i]->x, vBullet[i]->symbol);
 	fild.XYChange(player.y, player.x, player.symbol);
 	fild.Make();
 };
