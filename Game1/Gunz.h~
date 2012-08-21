@@ -5,7 +5,7 @@ class Gun1
 {
 public:
 	Gun1();
-	Bullet * Shoot();
+	Shot * Shoot();
 protected:
 	char symbol;
 };

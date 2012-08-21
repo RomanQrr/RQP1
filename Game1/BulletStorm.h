@@ -9,4 +9,9 @@ public:
 	Shot();
 	~Shot();
 };
+class PShot: public Shot
+{
+public:
+	void MoveDown();
+};
 #endif

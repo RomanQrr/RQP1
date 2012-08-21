@@ -9,7 +9,7 @@ public:
 	~Object();
 	void Destroy(); //Уничтожение
 	bool IsAlive() {return alive;}
-	void MoveDown();
+	virtual void MoveDown();
 	bool TryToShoot();
 	int x; //Координата Х
 	int y; //Координата Y
@@ -30,10 +30,10 @@ public:
 	Player(); //Конструктор
 	bool Damage();
 	~Player();
-	void PShoot(); //Стрельба игрока
 	void MoveL();
 	void MoveR();
 	Bullet * Shoot(); //Движение
+	Gun1 * mygun;
 };
 //Класс врагов
 

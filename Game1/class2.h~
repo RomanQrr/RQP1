@@ -30,8 +30,10 @@ public:
 	Player(); //Конструктор
 	bool Damage();
 	~Player();
-	void PShoot(); //Стрельба игрока
-	void PMove(); //Движение
+	void MoveL();
+	void MoveR();
+	Bullet * Shoot(); //Движение
+	Gun1 * mygun;
 };
 //Класс врагов
 

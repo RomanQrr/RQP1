@@ -7,4 +7,11 @@ Shot::Shot()
 	deley=1;
 };
 Shot::~Shot(){};
+void PShot::MoveDown()
+{
+	if(++m_tickNum % deley == 0)
+	{
+		x--;
+	}
 
+}

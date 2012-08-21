@@ -33,14 +33,16 @@ Player::Player()
 	y=width/2;
 	symbol='^';
 	hp=3;
+	mygun= new PGun1();
 }
 Player::~Player()
 {
 	std::cout<<"Игрок подбит! ";
 }
-void Player::PShoot()
+Shot * Player::Shoot()
 {
-	
+	Shot * gh = mygun->Shoot();
+	return gh;
 }
 
 bool Player::Damage()
@@ -48,4 +50,12 @@ bool Player::Damage()
 	if( --hp <= 0 )
 		return false;
 	return true;	
+}
+void Player::MoveL()
+{
+	y--;
+}
+void Player::MoveR()
+{
+	y++;
 }

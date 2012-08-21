@@ -1,7 +1,7 @@
 #include"Gunz.h"
 Gun1::Gun1()
 {
-	symbol='o';
+	symbol='|';
 };
 Shot * Gun1::Shoot()
 {

@@ -8,6 +8,5 @@ class Shot: public Object
 public:
 	Shot();
 	~Shot();
-	void MoveDown();
 };
 #endif
