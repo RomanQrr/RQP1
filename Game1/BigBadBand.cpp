@@ -6,8 +6,8 @@ Enemy::Enemy()
 	y=rand() % width;
 	symbol='T';
 	hp=1;
-	deley=3;
-	m_shotDeley=10;
+	deley=300;
+	m_shotDeley=1000;
 	mygun= new Gun1();
 };
 Shot * Enemy::Shoot()

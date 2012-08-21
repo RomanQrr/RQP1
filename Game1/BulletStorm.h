@@ -1,7 +1,7 @@
 #ifndef Storm_h
 #define Storm_h
 
-#include "class2.h"
+#include"class2.h"
 
 class Shot: public Object
 {

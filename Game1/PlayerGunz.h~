@@ -1,0 +1,9 @@
+#ifndef PGunz_h
+#define PGunz_h
+#include"Gunz.h"
+class PGun1: public Gun1
+{
+	PGun1();
+	Shot * Shoot();
+};
+#endif

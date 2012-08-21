@@ -6,6 +6,7 @@ Chain::Chain()
 {
 	fild.Apear(player.y, player.x, player.symbol);
 	running = true;
+	countE=0;
 }
 
 void Chain::CreateE()
@@ -19,6 +20,7 @@ void Chain::CreateE()
 		Enemy * enemy = new Enemy();
 		vEnemy.push_back( enemy );
 		fild.Apear(vEnemy.back()->y, vEnemy.back()->x, vEnemy.back()->symbol);
+		countE++;
 	//}
 }
 
@@ -40,7 +42,7 @@ void Chain::MoveAllE( int iCommand )
 	{
 			vBullet.push_back( player.Shoot() );
 			vBullet.back()->y=player.y;
-			vBullet.back()->x=player.x+1;
+			vBullet.back()->x=player.x-1;
 			fild.XYChange(vBullet.back()->y, vBullet.back()->x, vBullet.back()->symbol);
 	}
 	fild.Clear();
@@ -74,6 +76,7 @@ void Chain::MoveAllE( int iCommand )
 			if(vEnemy[i]->y>=width || vEnemy[i]->y<0 || vEnemy[i]->x>=height || vEnemy[i]->x<0)
 			{
 				vEnemy[i]->Destroy();
+				countE--;
 				continue;
 			}
 
@@ -82,6 +85,7 @@ void Chain::MoveAllE( int iCommand )
 				if(!player.Damage())
 					this->Stop();
 				vEnemy[i]->Destroy();
+				countE--;
 				continue;
 			}
 
@@ -92,6 +96,7 @@ void Chain::MoveAllE( int iCommand )
 					vEnemy[i]->Destroy();
 					fild.XYChange(vEnemy[i]->y, vEnemy[i]->x, vEnemy[i]->symbol);
 					vBullet[u]->Destroy();
+					countE--;
 					break;
 				}
 			}

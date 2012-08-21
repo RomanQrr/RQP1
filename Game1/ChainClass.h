@@ -5,6 +5,7 @@
 #include"class2.h"
 #include"BulletStorm.h"
 #include"BigBadBand.h"
+#include"Player.h"
 class Chain
 {
 public:
@@ -13,6 +14,7 @@ public:
 	bool IsRunning() { return running; }
 	void CreateE();
 	void MoveAllE( int iCommand );
+	int countE;
 private:
 	Player player;
 	Screen fild;

@@ -9,7 +9,7 @@ public:
 	~Object();
 	void Destroy(); //Уничтожение
 	bool IsAlive() {return alive;}
-	void MoveDown();
+	virtual void MoveDown();
 	bool TryToShoot();
 	int x; //Координата Х
 	int y; //Координата Y

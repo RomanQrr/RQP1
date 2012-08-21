@@ -24,17 +24,7 @@ private:
 };
 
 //Класс игрока
-class Player: public Object
-{
-public:	
-	Player(); //Конструктор
-	bool Damage();
-	~Player();
-	void MoveL();
-	void MoveR();
-	Bullet * Shoot(); //Движение
-	Gun1 * mygun;
-};
+
 //Класс врагов
 
 #endif

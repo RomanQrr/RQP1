@@ -3,7 +3,8 @@
 #include"Gunz.h"
 class PGun1: public Gun1
 {
-	PGun1;
+public:
+	PGun1();
 	Shot * Shoot();
 };
 #endif

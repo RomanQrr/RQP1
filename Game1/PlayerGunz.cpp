@@ -1,5 +1,5 @@
 #include"PlayerGunz.h"
-PGun1::PGun1
+PGun1::PGun1()
 {
 	symbol='A';
 }

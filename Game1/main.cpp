@@ -10,7 +10,6 @@ int main()
 	srand(time(0));
 	Chain world;
 	int command;
-	int countE;
 	while(world.IsRunning())
 	{
 		WINDOW * window = ::initscr();
@@ -20,9 +19,9 @@ int main()
 		//std::cout << command << "!!!!!!!!!!!!!" << std::endl; 
 		::endwin();
 		
-		if(countE<10){world.CreateE(); countE++;}
+		if(world.countE<10){world.CreateE();}
 		world.MoveAllE(command);
-		usleep(500000);
+		usleep(5000);
 	}
 
 	return 0;

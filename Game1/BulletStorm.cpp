@@ -4,7 +4,7 @@ Shot::Shot()
 	x=0;
 	y=0;
 	symbol='o';
-	deley=1;
+	deley=100;
 };
 Shot::~Shot(){};
 void PShot::MoveDown()
