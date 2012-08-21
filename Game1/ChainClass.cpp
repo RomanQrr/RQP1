@@ -1,6 +1,7 @@
 #include"ChainClass.h"
 #include<vector>
 #include<iostream>
+#include<cstdlib>
 Chain::Chain()
 {
 	fild.Apear(player.y, player.x, player.symbol);
@@ -9,13 +10,39 @@ Chain::Chain()
 
 void Chain::CreateE()
 {
-	Enemy * enemy = new Enemy();
-	vEnemy.push_back( enemy );
-	fild.Apear(vEnemy.back()->y, vEnemy.back()->x, vEnemy.back()->symbol);
+	/*int countE;
+	for(int i=0; i<vEnemy.size(); i++)
+		if(vEnemy[i]->IsAlive())
+			countE++;
+	if(countE<10)
+	{*/
+		Enemy * enemy = new Enemy();
+		vEnemy.push_back( enemy );
+		fild.Apear(vEnemy.back()->y, vEnemy.back()->x, vEnemy.back()->symbol);
+	//}
 }
 
-void Chain::MoveAllE()
+void Chain::MoveAllE( int iCommand )
 {
+	if( iCommand == 'a' )
+	{
+		fild.XYChange(player.y, player.x, '.');
+		player.MoveL();
+		fild.XYChange(player.y, player.x, player.symbol);
+	}
+	if( iCommand == 'd' )
+	{
+		fild.XYChange(player.y, player.x, '.');
+		player.MoveR();
+		fild.XYChange(player.y, player.x, player.symbol);
+	}
+	if( iCommand == 32 )
+	{
+			vBullet.push_back( player.Shoot() );
+			vBullet.back()->y=player.y;
+			vBullet.back()->x=player.x+1;
+			fild.XYChange(vBullet.back()->y, vBullet.back()->x, vBullet.back()->symbol);
+	}
 	fild.Clear();
 	for(int i=0; i<vBullet.size(); i++)
 	{
@@ -43,7 +70,6 @@ void Chain::MoveAllE()
 	{
 		if(vEnemy[i]->IsAlive())
 		{
-			std::cout<<"Начало движения"<<std::endl;
 			vEnemy[i]->MoveDown();
 			if(vEnemy[i]->y>=width || vEnemy[i]->y<0 || vEnemy[i]->x>=height || vEnemy[i]->x<0)
 			{
@@ -70,19 +96,33 @@ void Chain::MoveAllE()
 				}
 			}
 			if(vEnemy[i]->IsAlive())
+			{
 				fild.XYChange(vEnemy[i]->y, vEnemy[i]->x, vEnemy[i]->symbol);
+				if(vEnemy[i]->TryToShoot())
+				{
+					if(fild.outLook[vEnemy[i]->y][vEnemy[i]->x+1]=='.')
+					{
+						vBullet.push_back( vEnemy[i]->Shoot() );
+						vBullet.back()->y=vEnemy[i]->y;
+						vBullet.back()->x=vEnemy[i]->x+1;
+						fild.XYChange(vBullet.back()->y, vBullet.back()->x, vBullet.back()->symbol);
+					}
+				}
+					
+			}
 		}
 	}
 	fild.XYChange(player.y, player.x, player.symbol);
 	fild.Make();
 }
 
-void Chain::Shoot()
+/*void Chain::Shoot()
 {
 	for(int i=0; i<vEnemy.size(); i++)
 	{
 		if(vEnemy[i]->IsAlive())
 		{
+			vEnemy[i]->TryToShoot();
 			if(fild.outLook[vEnemy[i]->y][vEnemy[i]->x+1]=='.')
 			{
 				vBullet.push_back( vEnemy[i]->Shoot() );
@@ -93,4 +133,4 @@ void Chain::Shoot()
 		}
 	}
 	fild.Make();
-};
+};*/

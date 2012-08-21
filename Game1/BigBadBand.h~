@@ -7,7 +7,6 @@ class Enemy: public Object
 {
 public:
 	Enemy();
-	void EMoveDown(); //Движение
 	Shot * Shoot();
 	Gun1 * mygun;
 };

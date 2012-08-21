@@ -10,12 +10,14 @@ public:
 	void Destroy(); //Уничтожение
 	bool IsAlive() {return alive;}
 	void MoveDown();
+	bool TryToShoot();
 	int x; //Координата Х
 	int y; //Координата Y
 	char symbol;
 	int deley;
 	int m_tickNum;
 	int hp;
+	int m_shotDeley;
 
 private:
 	bool alive;
@@ -29,7 +31,9 @@ public:
 	bool Damage();
 	~Player();
 	void PShoot(); //Стрельба игрока
-	void PMove(); //Движение
+	void MoveL();
+	void MoveR();
+	Bullet * Shoot(); //Движение
 };
 //Класс врагов
 

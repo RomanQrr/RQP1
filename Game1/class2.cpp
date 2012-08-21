@@ -7,7 +7,7 @@ Object::Object()
 }
 Object::~Object()
 {
-	std::cout<<"Объект уничтожен."<<std::endl;
+	std::cout<<"Game Over!"<<std::endl;
 }
 void Object::Destroy()
 {
@@ -16,16 +16,21 @@ void Object::Destroy()
 }
 void Object::MoveDown()
 {
-	if(++m_tickNum == deley)
+	if(++m_tickNum % deley == 0)
 	{
 		x++;
-		m_tickNum=0;
 	}
+}
+bool Object::TryToShoot()
+{
+	if(m_tickNum % m_shotDeley == 0)
+		return true;
+	return false;
 }
 Player::Player()
 {
-	x=4;
-	y=2;
+	x=height-1;
+	y=width/2;
 	symbol='^';
 	hp=3;
 }

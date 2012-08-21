@@ -12,14 +12,12 @@ public:
 	void Stop() {running = false;}
 	bool IsRunning() { return running; }
 	void CreateE();
-	void MoveAllE();
-	void Shoot();
+	void MoveAllE( int iCommand );
 private:
 	Player player;
 	Screen fild;
 	std::vector< Enemy * > vEnemy;
 	std::vector< Shot * > vBullet;
-
 	bool running;
 };
 #endif

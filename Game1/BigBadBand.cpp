@@ -7,6 +7,7 @@ Enemy::Enemy()
 	symbol='T';
 	hp=1;
 	deley=3;
+	m_shotDeley=10;
 	mygun= new Gun1();
 };
 Shot * Enemy::Shoot()
